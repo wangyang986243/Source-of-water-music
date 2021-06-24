@@ -41,29 +41,9 @@
     <text class='more'>查看更多</text>
    </view>
    <scroll-view class="scrollviewcontainer" enable-flex scroll-x> 
-    <view class='scroll-item'>
-      <image src="/static/images/recommendSong/jcw.jpg"></image>
-      <text>啥也不知道，啥也不能说，就是这么做</text>
-    </view>
-    <view class='scroll-item'>
-      <image src="/static/images/recommendSong/jcw.jpg"></image>
-      <text>啥也不知道，啥也不能说，就是这么做</text>
-    </view>
-    <view class='scroll-item'>
-      <image src="/static/images/recommendSong/jcw.jpg"></image>
-      <text>啥也不知道，啥也不能说，就是这么做</text>
-    </view>
-    <view class='scroll-item'>
-      <image src="/static/images/recommendSong/jcw.jpg"></image>
-      <text>啥也不知道，啥也不能说，就是这么做</text>
-    </view>
-    <view class='scroll-item'>
-      <image src="/static/images/recommendSong/jcw.jpg"></image>
-      <text>啥也不知道，啥也不能说，就是这么做</text>
-    </view>
-    <view class='scroll-item'>
-      <image src="/static/images/recommendSong/jcw.jpg"></image>
-      <text>啥也不知道，啥也不能说，就是这么做</text>
+    <view class='scroll-item' wx:for="{{recommendSongList}}" wx:key='{{id}}'>
+      <image src="{{item.picUrl}}"></image>
+      <text>{{item.name}}</text>
     </view>
    </scroll-view>
   </view>
