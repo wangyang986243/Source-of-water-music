@@ -1,13 +1,10 @@
 <!--pages/index/index.wxml-->
 <view class='container'>
   <!-- 轮播图 -->
-  <swiper class='swiper' indicator-dots indicator-color='ivory' indicator-active-color='#d43c33' autoplay
-    interval='2000' circular>
-    <swiper-item>
-      <image src='/static/images/recommendSong/jcw.jpg'></image>
-    </swiper-item>
-    <swiper-item>
-      <image src='/static/images/recommendSong/02.jpg'></image>
+  <swiper class='swiper' indicator-dots indicator-color='ivory' indicator-active-color='#d43c33' autoplay interval='2000' circular>
+    <swiper-item  wx:for="{{bannerList}}" wx:key='bannerId'>
+      <image src='{{item.pic}}'></image>
+      <text>{{item.pic}}</text>
     </swiper-item>
   </swiper>
 
