@@ -1,7 +1,74 @@
 <!--pages/index/index.wxml-->
-<view>
-<image src='/static/images/recommendSong/jcw.jpg'></image>
-<text>某某某</text>
-<text> 水之源应用欢迎你 </text>
-<button>登入</button>
+<view class='container'>
+  <!-- 轮播图 -->
+  <swiper class='swiper' indicator-dots indicator-color='ivory' indicator-active-color='#d43c33' autoplay
+    interval='2000' circular>
+    <swiper-item>
+      <image src='/static/images/recommendSong/jcw.jpg'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='/static/images/recommendSong/02.jpg'></image>
+    </swiper-item>
+  </swiper>
+
+  <!-- 五个图标导航区域  -->
+  <view class="navs">
+    <view class="nav-item">
+      <text class="iconfont icon-shouye"></text>
+      <text>每日推荐</text>
+    </view>
+    <view class="nav-item">
+      <text class="iconfont icon-gedan"></text>
+      <text>歌单</text>
+    </view>
+    <view class="nav-item">
+      <text class="iconfont icon-paihangbang"></text>
+      <text>排行榜</text>
+    </view>
+    <view class="nav-item">
+      <text class="iconfont icon-diantai"></text>
+      <text>电台</text>
+    </view>
+    <view class="nav-item">
+      <text class="iconfont icon-zhibo"></text>
+      <text>直播</text>
+    </view>
+  </view>
+
+  <!-- 推荐歌曲区域 -->
+<view class="recommend">
+  <text class='title'>推荐歌曲</text>
+  <view>
+   <view class="header">
+    <text >为你精心推荐</text>
+    <text class='more'>查看更多</text>
+   </view>
+   <scroll-view class="scrollviewcontainer" enable-flex scroll-x> 
+    <view class='scroll-item'>
+      <image src="/static/images/recommendSong/jcw.jpg"></image>
+      <text>啥也不知道，啥也不能说，就是这么做</text>
+    </view>
+    <view class='scroll-item'>
+      <image src="/static/images/recommendSong/jcw.jpg"></image>
+      <text>啥也不知道，啥也不能说，就是这么做</text>
+    </view>
+    <view class='scroll-item'>
+      <image src="/static/images/recommendSong/jcw.jpg"></image>
+      <text>啥也不知道，啥也不能说，就是这么做</text>
+    </view>
+    <view class='scroll-item'>
+      <image src="/static/images/recommendSong/jcw.jpg"></image>
+      <text>啥也不知道，啥也不能说，就是这么做</text>
+    </view>
+    <view class='scroll-item'>
+      <image src="/static/images/recommendSong/jcw.jpg"></image>
+      <text>啥也不知道，啥也不能说，就是这么做</text>
+    </view>
+    <view class='scroll-item'>
+      <image src="/static/images/recommendSong/jcw.jpg"></image>
+      <text>啥也不知道，啥也不能说，就是这么做</text>
+    </view>
+   </scroll-view>
+  </view>
+</view>
 </view>

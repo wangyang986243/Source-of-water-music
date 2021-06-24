@@ -3,9 +3,9 @@
     "pages/index/index"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#f0f",
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "小程序",
+    "navigationBarBackgroundColor": "#d43c33",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "水之源音乐",
     "backgroundColor": "#eeeeee",
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": false
