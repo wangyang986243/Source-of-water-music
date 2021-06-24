@@ -37,21 +37,6 @@
 .recommend{
   padding:20rpx;
 }
-.recommend   .title{
-  font-size: 32rpx;
-  line-height: 80rpx;
-  color: #666666;
-}
-.recommend .header{
-  height: 70rpx;
-}
-.recommend .header .more{
-  float: right;
-  padding:10rpx  20rpx;
-  border:1px solid #333;
-  border-radius: 10rpx;
-  font-size: 26rpx;
-}
 .scrollviewcontainer{
   display: flex;
   height: 300rpx;
@@ -73,4 +58,41 @@ text-overflow: ellipsis;
 display: -webkit-box;
 -webkit-line-clamp: 2;
 -webkit-box-orient: vertical;
+}
+
+/*  排行榜区域 */
+.topList{
+padding:20rpx;
+
+}
+.topList  .title {
+  font-size: 36rpx;
+  margin-bottom: 20rpx;
+}
+.topList .topListSwiper{
+  width: 100%;
+  padding-left: 20rpx;
+}
+.topList .swiperTopList-item{
+  width: 90% !important;
+  background: #fbfbfb;
+}
+.topList .swiperTopList-item .item{
+  display: flex;
+}
+.topList .swiperTopList-item .item image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+}
+.topList .swiperTopList-item .item .count{
+  width: 100rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+.topList .swiperTopList-item .item .music{
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
 }

@@ -1,8 +1,9 @@
 <!--pages/index/index.wxml-->
 <view class='container'>
   <!-- 轮播图 -->
-  <swiper class='swiper' indicator-dots indicator-color='ivory' indicator-active-color='#d43c33' autoplay interval='2000' circular>
-    <swiper-item  wx:for="{{bannerList}}" wx:key='bannerId'>
+  <swiper class='swiper' indicator-dots indicator-color='ivory' indicator-active-color='#d43c33' autoplay
+    interval='2000' circular>
+    <swiper-item wx:for="{{bannerList}}" wx:key='bannerId'>
       <image src='{{item.pic}}'></image>
       <text>{{item.pic}}</text>
     </swiper-item>
@@ -33,19 +34,79 @@
   </view>
 
   <!-- 推荐歌曲区域 -->
-<view class="recommend">
-  <text class='title'>推荐歌曲</text>
-  <view>
-   <view class="header">
-    <text >为你精心推荐</text>
-    <text class='more'>查看更多</text>
-   </view>
-   <scroll-view class="scrollviewcontainer" enable-flex scroll-x> 
-    <view class='scroll-item' wx:for="{{recommendSongList}}" wx:key='{{id}}'>
-      <image src="{{item.picUrl}}"></image>
-      <text>{{item.name}}</text>
+  <view class="recommend">
+    <Navbar title='推荐歌曲' nav='为你精心推荐'></Navbar>
+    <view>
+      <scroll-view class="scrollviewcontainer" enable-flex scroll-x>
+        <view class='scroll-item' wx:for="{{recommendSongList}}" wx:key='id'>
+          <image src="{{item.picUrl}}"></image>
+          <text>{{item.name}}</text>
+        </view>
+      </scroll-view>
     </view>
-   </scroll-view>
   </view>
-</view>
+
+  <!-- 排行榜区域 -->
+  <view class='topList'>
+    <Navbar title='排行榜' nav='热歌风向标'></Navbar>
+    <swiper class="topListSwiper" circular>
+      <swiper-item class='swiperTopList-item'>
+        <text class='title'>云音乐热歌榜</text>
+        <view class='item'>
+          <image src='/static/images/recommendSong/jcw.jpg'></image>
+          <text class='count'>1</text>
+          <text class='music'>不知道</text>
+        </view>
+        <view class='item'>
+          <image src='/static/images/recommendSong/jcw.jpg'></image>
+          <text class='count'>1</text>
+          <text class='music'>不知道</text>
+        </view>
+        <view class='item'>
+          <image src='/static/images/recommendSong/jcw.jpg'></image>
+          <text class='count'>1</text>
+          <text class='music'>不知道</text>
+        </view>
+      </swiper-item>
+      <swiper-item class='swiperTopList-item'>
+        <text class='title'>云音乐热歌榜</text>
+        <view class='item'>
+          <image src='/static/images/recommendSong/jcw.jpg'></image>
+          <text class='count'>1</text>
+          <text class='music'>不知道</text>
+        </view>
+        <view class='item'>
+          <image src='/static/images/recommendSong/jcw.jpg'></image>
+          <text class='count'>1</text>
+          <text class='music'>不知道</text>
+        </view>
+        <view class='item'>
+          <image src='/static/images/recommendSong/jcw.jpg'></image>
+          <text class='count'>1</text>
+          <text class='music'>不知道</text>
+        </view>
+      </swiper-item>
+      <swiper-item class='swiperTopList-item'>
+        <text class='title'>云音乐热歌榜</text>
+        <view class='item'>
+          <image src='/static/images/recommendSong/jcw.jpg'></image>
+          <text class='count'>1</text>
+          <text class='music'>不知道</text>
+        </view>
+        <view class='item'>
+          <image src='/static/images/recommendSong/jcw.jpg'></image>
+          <text class='count'>1</text>
+          <text class='music'>不知道</text>
+        </view>
+        <view class='item'>
+          <image src='/static/images/recommendSong/jcw.jpg'></image>
+          <text class='count'>1</text>
+          <text class='music'>不知道</text>
+        </view>
+      </swiper-item>
+    </swiper>
+  
+
+
+  </view>
 </view>

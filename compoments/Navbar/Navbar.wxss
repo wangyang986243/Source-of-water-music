@@ -1,0 +1,16 @@
+/* compoments/Navbar.wxss */
+.Navbar   .title{
+  font-size: 32rpx;
+  line-height: 80rpx;
+  color: #666666;
+}
+.Navbar .header{
+  height: 70rpx;
+}
+.Navbar .header .more{
+  float: right;
+  padding:10rpx  20rpx;
+  border:1px solid #333;
+  border-radius: 10rpx;
+  font-size: 26rpx;
+}
