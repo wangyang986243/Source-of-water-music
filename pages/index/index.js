@@ -8,6 +8,7 @@ Page({
   data: {
     bannerList: [], //轮播图数据
     recommendSongList: [], //推荐歌曲数据
+    topList: [], //排行榜数据
   },
 
   /**
@@ -15,14 +16,32 @@ Page({
    */
   onLoad: async function (options) {
     //获取轮播图数据
-    let bannerData = await request('/banner', { type: 2 })
+    let bannerData = await request('/banner', {
+      type: 2
+    })
     //获取推荐歌单数据
-    let recommendSongData = await request('/personalized', {limit: 15 })
-
+    let recommendSongData = await request('/personalized', {
+      limit: 15
+    })
     this.setData({
       bannerList: bannerData.banners,
       recommendSongList: recommendSongData.result
     })
+    //获取排行榜数据
+    let topListData = []
+    for (let i = 0; i < 5; i++) {
+      let result = await request('/top/list', {
+        idx: i
+      })
+      topListData.push({
+        name: result.playlist.name,
+        musics: result.playlist.tracks.slice(0, 3)
+      })
+    }
+    this.setData({
+      topList: topListData
+    })
+    console.log('111111', this.data.topList)
   },
 
   /**

@@ -50,62 +50,16 @@
   <view class='topList'>
     <Navbar title='排行榜' nav='热歌风向标'></Navbar>
     <swiper class="topListSwiper" circular>
-      <swiper-item class='swiperTopList-item'>
-        <text class='title'>云音乐热歌榜</text>
-        <view class='item'>
-          <image src='/static/images/recommendSong/jcw.jpg'></image>
-          <text class='count'>1</text>
-          <text class='music'>不知道</text>
-        </view>
-        <view class='item'>
-          <image src='/static/images/recommendSong/jcw.jpg'></image>
-          <text class='count'>1</text>
-          <text class='music'>不知道</text>
-        </view>
-        <view class='item'>
-          <image src='/static/images/recommendSong/jcw.jpg'></image>
-          <text class='count'>1</text>
-          <text class='music'>不知道</text>
-        </view>
-      </swiper-item>
-      <swiper-item class='swiperTopList-item'>
-        <text class='title'>云音乐热歌榜</text>
-        <view class='item'>
-          <image src='/static/images/recommendSong/jcw.jpg'></image>
-          <text class='count'>1</text>
-          <text class='music'>不知道</text>
-        </view>
-        <view class='item'>
-          <image src='/static/images/recommendSong/jcw.jpg'></image>
-          <text class='count'>1</text>
-          <text class='music'>不知道</text>
-        </view>
-        <view class='item'>
-          <image src='/static/images/recommendSong/jcw.jpg'></image>
-          <text class='count'>1</text>
-          <text class='music'>不知道</text>
-        </view>
-      </swiper-item>
-      <swiper-item class='swiperTopList-item'>
-        <text class='title'>云音乐热歌榜</text>
-        <view class='item'>
-          <image src='/static/images/recommendSong/jcw.jpg'></image>
-          <text class='count'>1</text>
-          <text class='music'>不知道</text>
-        </view>
-        <view class='item'>
-          <image src='/static/images/recommendSong/jcw.jpg'></image>
-          <text class='count'>1</text>
-          <text class='music'>不知道</text>
-        </view>
-        <view class='item'>
-          <image src='/static/images/recommendSong/jcw.jpg'></image>
-          <text class='count'>1</text>
-          <text class='music'>不知道</text>
+      <swiper-item class='swiperTopList-item' wx:for="{{topList}}" wx:key='name'>
+        <view class='title'>{{item.name}}</view>
+        <view class='item' wx:for="{{item.musics}}" wx:key='id' wx:for-item='musicItem'>
+          <image src='{{musicItem.al.picUrl}}'></image>
+          <text class='count'>{{index+1}}</text>
+          <text class='music'>{{musicItem.al.name}}</text>
         </view>
       </swiper-item>
     </swiper>
-  
+
 
 
   </view>

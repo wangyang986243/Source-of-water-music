@@ -1,98 +1,120 @@
 /* pages/index/index.wxss */
-.swiper{
+.swiper {
   width: 100%;
   height: 360rpx;
 }
-.swiper image{
- width: 100%;
- height: 100%;
+
+.swiper image {
+  width: 100%;
+  height: 100%;
 }
 
 /* 五个图标导航区域 */
-.navs{
+.navs {
   display: flex;
   justify-content: space-around;
 }
-.nav-item{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
 }
-.nav-item text{
+
+.nav-item text {
   font-size: 26rpx;
 }
-.nav-item .iconfont{
+
+.nav-item .iconfont {
   margin: 20rpx 0;
   width: 100rpx;
   height: 100rpx;
   line-height: 100rpx;
   border-radius: 50%;
-  background: rgb(240,19,19);
+  background: rgb(240, 19, 19);
   font-size: 48rpx;
-  color:#fff
+  color: #fff
 }
 
 /* 推荐歌曲 */
-.recommend{
-  padding:20rpx;
+.recommend {
+  padding: 20rpx;
 }
-.scrollviewcontainer{
+
+.scrollviewcontainer {
   display: flex;
   height: 300rpx;
 }
-.scrollviewcontainer .scroll-item{
+
+.scrollviewcontainer .scroll-item {
   width: 200rpx;
   margin-right: 20rpx;
 }
-.scrollviewcontainer .scroll-item image{
+
+.scrollviewcontainer .scroll-item image {
   width: 200rpx;
   height: 200rpx;
   border-radius: 10rpx;
 }
-.scrollviewcontainer .scroll-item text{
-font-size: 26rpx;
-/* 多行文本溢出 */
-overflow : hidden;
-text-overflow: ellipsis;
-display: -webkit-box;
--webkit-line-clamp: 2;
--webkit-box-orient: vertical;
+
+.scrollviewcontainer .scroll-item text {
+  font-size: 26rpx;
+  /* 多行文本溢出 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 /*  排行榜区域 */
-.topList{
-padding:20rpx;
-
+.topList {
+  padding: 20rpx;
+  height: 400rpx;
 }
-.topList  .title {
+
+.topList .title {
   font-size: 36rpx;
   margin-bottom: 20rpx;
 }
-.topList .topListSwiper{
+
+.topList .topListSwiper {
   width: 100%;
   padding-left: 20rpx;
+  height: 400rpx;
 }
-.topList .swiperTopList-item{
+
+.topList .swiperTopList-item {
   width: 90% !important;
   background: #fbfbfb;
 }
-.topList .swiperTopList-item .item{
+
+.topList .swiperTopList-item .item {
   display: flex;
+  margin-bottom: 10rpx;
 }
-.topList .swiperTopList-item .item image{
+
+.topList .swiperTopList-item .item image {
   width: 100rpx;
   height: 100rpx;
   border-radius: 10rpx;
 }
-.topList .swiperTopList-item .item .count{
+
+.topList .swiperTopList-item .item .count {
   width: 100rpx;
   height: 100rpx;
   line-height: 100rpx;
   text-align: center;
 }
-.topList .swiperTopList-item .item .music{
+
+.topList .swiperTopList-item .item .music {
   height: 100rpx;
   line-height: 100rpx;
   text-align: center;
+  width: 400rpx;
+  /* 单行溢出 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
