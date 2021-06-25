@@ -41,7 +41,6 @@ Page({
     this.setData({
       topList: topListData
     })
-    console.log('111111', this.data.topList)
   },
 
   /**

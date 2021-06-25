@@ -111,7 +111,7 @@
 .topList .swiperTopList-item .item .music {
   height: 100rpx;
   line-height: 100rpx;
-  text-align: center;
+  text-align: left;
   width: 400rpx;
   /* 单行溢出 */
   overflow: hidden;
