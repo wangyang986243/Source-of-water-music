@@ -1,18 +1,37 @@
-// pages/video/video.js
+import request from '../../utils/request'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    labelList: [], //视频列表数据
+    label: '',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    //获取标签数据
+    this.getLabels()
 
+  },
+  //获取标签数据
+  async getLabels() {
+    let result = await request('/video/group/list')
+   
+    let labelList = result.data.slice(0, 14)
+    if (!labelList.length) return 
+    this.setData({
+      labelList,
+      label:labelList[0].name
+    })
+  },
+  tapLabel(event) {
+    this.setData({
+      label: event.currentTarget.dataset.type
+    })
   },
 
   /**

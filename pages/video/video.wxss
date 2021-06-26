@@ -1,1 +1,38 @@
 /* pages/video/video.wxss */
+/* 头部搜索 */
+.container .head{
+  display: flex;
+  padding: 10rpx;
+}
+.container .head image{
+  width: 60rpx;
+  height:60rpx;
+}
+.container .head .search{
+  flex: 1;
+  margin:0 20rpx;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color:#d43c33;
+  border-bottom:1px solid #eee;
+}
+
+/* 标签区域 */
+.labelScroll{
+  width: 100%;
+  display: flex;
+  white-space: nowrap;
+}
+.labelScroll .scroll-item{
+  padding: 0 20rpx;
+  font-size: 28rpx;
+}
+.labelScroll .scroll-item .label{
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.labelScroll .scroll-item .active{
+  border-bottom:1px solid #d43c33;
+  color:#d43c33
+}

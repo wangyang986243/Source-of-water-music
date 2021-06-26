@@ -1,2 +1,19 @@
 <!--pages/video/video.wxml-->
-<text>pages/video/video.wxml</text>
+<view class='container'>
+  <!-- 头部搜索 -->
+  <view class="head">
+    <image src="/static/images/video/video.jpg" alt="" />
+    <view class="search">
+      搜索歌曲
+    </view>
+    <image src="/static/images/logo.png" alt="" />
+  </view>
+  <!-- 标签区域 -->
+  <scroll-view class='labelScroll' scroll-x enable-flex>
+    <view class="scroll-item " wx:for='{{labelList}}' wx:key='id'>
+      <view class="label  {{label == item.name ? 'active' : '' }}" bindtap='tapLabel' data-type='{{item.name}}'>
+        {{item.name}}
+      </view>
+    </view>
+  </scroll-view>
+</view>
