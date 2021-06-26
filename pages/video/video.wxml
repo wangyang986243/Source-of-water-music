@@ -9,19 +9,19 @@
     <image src="/static/images/logo.png" alt="" />
   </view>
   <!-- 标签区域 -->
-  <scroll-view class='labelScroll' scroll-x enable-flex>
-    <view class="scroll-item " wx:for='{{labelList}}' wx:key='id'>
+  <scroll-view class='labelScroll' scroll-x enable-flex scroll-into-view="{{'scroll' + navId}}" scroll-with-animation>
+    <view id="{{'scroll' + item.id}}" class="scroll-item " wx:for='{{labelList}}' wx:key='id'>
       <view class="label  {{navId === item.id ? 'active' : '' }}" bindtap='tapLabel' data-type='{{item.id}}'>
         {{item.name}}
       </view>
     </view>
   </scroll-view>
-<!-- 视屏列表区域 -->
-<scroll-view wx:if='{{videoList.length}}' scroll-y class='videoScroll'>
-  <view wx:for='{{videoList}}' wx:key='id' class='videoItem'>
-    <video src="{{item.data.urlInfo.url}}"></video>
-     <view class="content">{{item.data.title}}</view>
-     <view class="footer">
+  <!-- 视屏列表区域 -->
+  <scroll-view class='videoScroll' wx:if='{{videoList.length}}' scroll-y>
+    <view wx:for='{{videoList}}' wx:key='id' class='videoItem'>
+      <video src="{{item.data.urlInfo.url}}"></video>
+      <view class="content">{{item.data.title}}</view>
+      <view class="footer">
         <image class="avatar" src="{{item.data.creator.avatarUrl}}"></image>
         <text class="nickName">{{item.data.creator.nickname}}</text>
         <view class="comments_praised">
@@ -38,8 +38,8 @@
           </button>
         </view>
       </view>
-  </view>
-</scroll-view>
-<view wx:else class='noData'>暂无数据 </view>
+    </view>
+  </scroll-view>
+  <view wx:else class='noData'>暂无数据 </view>
 
 </view>

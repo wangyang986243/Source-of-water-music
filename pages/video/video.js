@@ -27,7 +27,6 @@ Page({
       labelList,
       navId: labelList[0].id,
     })
-    //
     this.getVideoList(this.data.navId)
   },
   //点击标签逻辑
@@ -38,7 +37,6 @@ Page({
     })
     this.setData({
       navId: event.currentTarget.dataset.type,
-      videoList:[]
     })
     this.getVideoList(this.data.navId)
   },
@@ -50,7 +48,6 @@ Page({
       videoList
     })
     wx.hideLoading()
-    console.log(this.data.videoList)
   },
 
   /**

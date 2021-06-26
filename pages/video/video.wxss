@@ -99,3 +99,7 @@
   top: -20rpx;
   font-size: 20rpx;
 }
+
+.noData{
+  
+}
