@@ -6,7 +6,7 @@ Page({
    */
   data: {
     labelList: [], //视频列表数据
-    label: '',
+    navId: '', //点击了哪个标签id
   },
 
   /**
@@ -20,17 +20,17 @@ Page({
   //获取标签数据
   async getLabels() {
     let result = await request('/video/group/list')
-   
     let labelList = result.data.slice(0, 14)
-    if (!labelList.length) return 
+    if (!labelList.length) return
     this.setData({
       labelList,
-      label:labelList[0].name
+      navId: labelList[0].id
     })
   },
   tapLabel(event) {
+    console.log(event)
     this.setData({
-      label: event.currentTarget.dataset.type
+      navId: event.currentTarget.dataset.type
     })
   },
 

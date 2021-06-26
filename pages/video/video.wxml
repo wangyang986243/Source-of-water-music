@@ -11,7 +11,7 @@
   <!-- 标签区域 -->
   <scroll-view class='labelScroll' scroll-x enable-flex>
     <view class="scroll-item " wx:for='{{labelList}}' wx:key='id'>
-      <view class="label  {{label == item.name ? 'active' : '' }}" bindtap='tapLabel' data-type='{{item.name}}'>
+      <view class="label  {{navId == item.id ? 'active' : '' }}" bindtap='tapLabel' data-type='{{item.id}}'>
         {{item.name}}
       </view>
     </view>
