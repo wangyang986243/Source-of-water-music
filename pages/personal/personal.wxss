@@ -11,6 +11,7 @@
   position: relative;
   padding: 100rpx 30rpx 0;
 }
+
 .user-section .bg {
   position: absolute;
   left: 0;
@@ -22,22 +23,23 @@
 }
 
 
-.user-info-box{
+.user-info-box {
   height: 180rpx;
-  display:flex;
-  align-items:center;
-  position:relative;
+  display: flex;
+  align-items: center;
+  position: relative;
   z-index: 1;
 
 }
 
-.user-info-box .portrait{
+.user-info-box .portrait {
   width: 130rpx;
   height: 130rpx;
-  border:5rpx solid #fff;
+  border: 5rpx solid #fff;
   border-radius: 50%;
 }
-.user-info-box .username{
+
+.user-info-box .username {
   font-size: 24;
   color: #303133;
   margin-left: 20rpx;
@@ -49,7 +51,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-// background: linear-gradient(left, red, black);
   background: rgba(0, 0, 0, .7);
   height: 240rpx;
   color: #f7d680;
@@ -58,15 +59,15 @@
 }
 
 
-.vip-card-box .card-bg{
-  position:absolute;
+.vip-card-box .card-bg {
+  position: absolute;
   top: 20rpx;
   right: 0;
   width: 380rpx;
   height: 260rpx;
 }
 
-.vip-card-box .b-btn{
+.vip-card-box .b-btn {
   position: absolute;
   right: 20rpx;
   top: 16rpx;
@@ -81,7 +82,7 @@
   z-index: 1;
 }
 
-.vip-card-box .b-btn{
+.vip-card-box .b-btn {
   position: absolute;
   right: 20rpx;
   top: 16rpx;
@@ -92,7 +93,8 @@
   font-size: 22rpx;
   color: #36343c;
   border-radius: 20px;
-  /*background: linear-gradient(left, #f9e6af, #ffd465);*/ /*渐变不生效*/
+  /*background: linear-gradient(left, #f9e6af, #ffd465);*/
+  /*渐变不生效*/
   background: #f9e6af;
   z-index: 1;
 }
@@ -102,7 +104,8 @@
   color: #f7d680;
   margin-bottom: 28rpx;
 }
-.vip-card-box .tit .iconfont{
+
+.vip-card-box .tit .iconfont {
   color: #f6e5a3;
   margin-right: 16rpx;
 }
@@ -110,27 +113,28 @@
 
 
 
-.vip-card-box .e-m{
+.vip-card-box .e-m {
   font-size: 34rpx;
   margin-top: 10rpx;
 }
-.vip-card-box .e-b{
+
+.vip-card-box .e-b {
   font-size: 24rpx;
   color: #d8cba9;
   margin-top: 10rpx;
 }
 
 
-.cover-container{
+.cover-container {
   margin-top: -150rpx;
   padding: 0 30rpx;
-  position:relative;
+  position: relative;
   background: #f5f5f5;
   padding-bottom: 20rpx;
 }
 
-.cover-container .arc{
-  position:absolute;
+.cover-container .arc {
+  position: absolute;
   left: 0;
   top: -34rpx;
   width: 100%;
@@ -178,6 +182,7 @@
   display: flex;
   height: 160rpx;
 }
+
 .personalContent .recentPlay {
   display: flex;
 }
@@ -201,7 +206,8 @@
   margin-top: 20rpx;
 
 }
-.cardList .card-item{
+
+.cardList .card-item {
   border-top: 1rpx solid #eee;
   height: 80rpx;
   line-height: 80rpx;
@@ -209,20 +215,38 @@
   font-size: 26rpx;
   color: #333;
 }
+
 .cardList .card-item .more {
   float: right;
 }
 
-/* 最近播放记录 */
-.recentScroll {
+.personalContent .recentPlayContainer .recentPlayRecordScroll {
   display: flex;
   height: 200rpx;
 }
-.recentItem {
-  margin-right: 20rpx;
+
+.personalContent .recentPlayContainer .recentPlayRecordScroll image {
+  margin-right: 10rpx;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 20rpx;
 }
-.recentItem image {
-  width: 200rpx;
-  height: 200rpx;
-  border-radius: 10rpx;
+
+.personalContent .recentPlayContainer .recentPlayRecordScroll .recentPlayRecordScrollItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.personalContent .recentPlayContainer .recentPlayRecordScroll .musicName {
+  width: 150rpx;
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.noRecord {
+  font-size: 28rpx;
 }

@@ -1,3 +1,4 @@
+import request from '../../utils/request'
 let startY = 0; //手指开始移动的位置
 let moveY =0;//手指最终移动的位置
 let moveDistance = 0; //手指移动的距离
@@ -9,6 +10,7 @@ Page({
     coverTransform:'translateY(0)',//动画平移
     coverTransition :'',//过渡效果
     userInfo:{},//用户信息
+    recentPlayRecordLists:[],//最近播放记录
   },
 
   /**
@@ -21,6 +23,8 @@ Page({
     this.setData({
       userInfo:JSON.parse(userInfo)
     })
+    //获取最近播放数据
+    this.getRecentPlayRecord(this.data.userInfo.userId)
   },
   // 手指移动开始
   bindtouchstart(event){
@@ -54,6 +58,14 @@ Page({
   toLogin(){
     wx.navigateTo({
       url:'/pages/login/login'
+    })
+  },
+  //获取最近播放数据
+  async getRecentPlayRecord(userId){
+  let result =   await request('/user/record',{uid:userId,type:0})
+  let recentPlayRecordLists = result.allData.splice(0,10).map((item,index)=>{return Object.assign(item,{id:index})})
+    this.setData({
+      recentPlayRecordLists
     })
   },
 
