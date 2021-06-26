@@ -32,19 +32,24 @@ Page({
   },
   //点击标签逻辑
   tapLabel(event) {
-    console.log(event)
+    wx.showLoading({
+      title: '正在加载中',
+      mask: true,
+    })
     this.setData({
-      navId: event.currentTarget.dataset.type
+      navId: event.currentTarget.dataset.type,
+      videoList:[]
     })
     this.getVideoList(this.data.navId)
   },
   //获取视频标签下对应的视频数据
   async getVideoList(navId){
     let result = await request('/video/group',{id: navId})
-    let videoList = result.datas
+    let videoList = result.datas.map((item,index)=>{return  Object.assign(item,{id:index})})
     this.setData({
       videoList
     })
+    wx.hideLoading()
     console.log(this.data.videoList)
   },
 
