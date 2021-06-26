@@ -7,6 +7,7 @@ Page({
   data: {
     labelList: [], //视频列表数据
     navId: '', //点击了哪个标签id
+    videoList:[],//标签下对应的视频数据
   },
 
   /**
@@ -24,14 +25,27 @@ Page({
     if (!labelList.length) return
     this.setData({
       labelList,
-      navId: labelList[0].id
+      navId: labelList[0].id,
     })
+    //
+    this.getVideoList(this.data.navId)
   },
+  //点击标签逻辑
   tapLabel(event) {
     console.log(event)
     this.setData({
       navId: event.currentTarget.dataset.type
     })
+    this.getVideoList(this.data.navId)
+  },
+  //获取视频标签下对应的视频数据
+  async getVideoList(navId){
+    let result = await request('/video/group',{id: navId})
+    let videoList = result.datas
+    this.setData({
+      videoList
+    })
+    console.log(this.data.videoList)
   },
 
   /**
