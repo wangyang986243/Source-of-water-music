@@ -58,7 +58,7 @@
             <text class="iconfont icon-duihua"></text>
             <text class="count">{{item.data.commentCount}}</text>
           </text>
-          <button open-type="share" class="item btn">
+          <button open-type="share" class="item btn" data-video='{{item.data}}'>
             <text class="iconfont icon-gengduo"></text>
           </button>
         </view>
