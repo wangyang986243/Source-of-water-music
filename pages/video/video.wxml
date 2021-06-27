@@ -19,20 +19,24 @@
   <!-- 视屏列表区域 -->
   <scroll-view class='videoScroll' wx:if='{{videoList.length}}' scroll-y>
     <view wx:for='{{videoList}}' wx:key='id' class='videoItem'>
-      <!-- wx:if='{{item.data.vid == videoId}}'         -->
       <video 
-      class='common'  
+      wx:if='{{item.data.vid == videoId}}' 
+      class='common' 
       src="{{item.data.urlInfo.url}}" 
-      bindplay='playVideo' 
+      bindplay='playVideo'
       id="{{item.data.vid}}" 
-      poster='{{item.data.coverUrl}}'></video>
+      poster='{{item.data.coverUrl}}'
+      bindtimeupdate='timeupdate'
+      bindended='bindended'
+      ></video>
       <!-- 性能优化 -->
-      <!-- <image 
-      wx:else
-      class='common'   
-      src='{{item.data.coverUrl}}'
-      bindtap='playVideo' 
-      id="{{item.data.vid}}" ></image> -->
+      <image 
+      wx:else  
+      bindtap='playVideo'
+      class='common'
+      id="{{item.data.vid}}"
+      src='{{item.data.coverUrl}}'  
+     ></image>
 
       <view class="content">{{item.data.title}}</view>
       <view class="footer">

@@ -3,6 +3,7 @@
 .container .head{
   display: flex;
   padding: 10rpx;
+  
 }
 .container .head image{
   width: 60rpx;
@@ -40,6 +41,9 @@
 }
 
 /* 视屏列表 */
+.videoScroll{
+  height: calc(100vh - 200rpx);
+}
 .videoScroll .videoItem {
   padding: 0 3%;
 }
