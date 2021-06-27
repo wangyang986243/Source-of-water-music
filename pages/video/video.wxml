@@ -17,7 +17,14 @@
     </view>
   </scroll-view>
   <!-- 视屏列表区域 -->
-  <scroll-view class='videoScroll' wx:if='{{videoList.length}}' scroll-y>
+  <scroll-view 
+  class='videoScroll' 
+  wx:if='{{videoList.length}}' 
+  scroll-y   
+  refresher-enabled 
+  refresher-triggered='{{isRefresher}}'
+  bindrefresherrefresh='refresherrefresh'
+  bindscrolltolower='scrolltolower'>
     <view wx:for='{{videoList}}' wx:key='id' class='videoItem'>
       <video 
       wx:if='{{item.data.vid == videoId}}' 

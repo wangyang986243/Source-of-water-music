@@ -10,6 +10,7 @@ Page({
     videoList: [], //标签下对应的视频数据
     videoId: '', //点击了哪个视频
     videoUpdateTime: [], //视频点击的时间的数据[{id:***,time:***}]
+    isRefresher:false,//下拉刷新标志
   },
 
   /**
@@ -53,7 +54,8 @@ Page({
       })
     })
     this.setData({
-      videoList
+      videoList,
+      isRefresher:false //关闭下拉刷新
     })
     wx.hideLoading()
   },
@@ -131,6 +133,14 @@ Page({
     this.setData({
       videoUpdateTime
     })
+  },
+  //下拉刷新
+  refresherrefresh(){
+    this.getVideoList(this.data.navId)
+  },
+  //下拉触底
+  scrolltolower(){
+    console.log("触底了！")
   },
 
   /**
