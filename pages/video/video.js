@@ -8,6 +8,7 @@ Page({
     labelList: [], //视频列表数据
     navId: '', //点击了哪个标签id
     videoList:[],//标签下对应的视频数据
+    videoId:'',//点击了哪个视频
   },
 
   /**
@@ -47,7 +48,6 @@ Page({
     this.setData({
       videoList
     })
-    console.log('1111',this.data.videoList)
     wx.hideLoading()
   },
 
@@ -64,14 +64,20 @@ Page({
      * 
      * 单例模式：
      *  1. 需要创建多个对象的场景下，通过一个变量接收，始终保持只有一个对象
-     * 节省内存空间
+     *  2.节省内存空间
     */
     let vid = event.currentTarget.id
+    this.data.vidCopy = vid
     //关闭上一个播放的视频
     this.vid !== vid && this.videoContext && this.videoContext.stop();
-    this.vid = vid;
+    // this.vid = vid;
+    // this.setData({
+    //   videoId:vid
+    // })
+   
     //创建控制视频标签的实例对象
     this.videoContext = wx.createVideoContext(vid);
+    this.videoContext.play()
   },
 
   /**
