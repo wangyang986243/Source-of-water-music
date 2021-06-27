@@ -19,7 +19,7 @@
   <!-- 视屏列表区域 -->
   <scroll-view class='videoScroll' wx:if='{{videoList.length}}' scroll-y>
     <view wx:for='{{videoList}}' wx:key='id' class='videoItem'>
-      <video src="{{item.data.urlInfo.url}}"></video>
+      <video src="{{item.data.urlInfo.url}}" bindplay='playVideo' id="{{item.data.vid}}"></video>
       <view class="content">{{item.data.title}}</view>
       <view class="footer">
         <image class="avatar" src="{{item.data.creator.avatarUrl}}"></image>

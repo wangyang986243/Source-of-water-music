@@ -47,7 +47,31 @@ Page({
     this.setData({
       videoList
     })
+    console.log('1111',this.data.videoList)
     wx.hideLoading()
+  },
+
+  //开始/继续播放视频
+  playVideo(event){
+    /**
+     * 问题：多个视频同时播放的问题
+     * 需求：
+     *  1. 在点击播放事件中需要找到上一个播放的视频
+     *  2. 在播放新视频之前关闭上一个正在播放的视频
+     * 关键：
+     *  1. 如何找到上一个视频的实例对象
+     *  2. 如何确认点击播放的视频和正在播放的视频是不是同一个视频
+     * 
+     * 单例模式：
+     *  1. 需要创建多个对象的场景下，通过一个变量接收，始终保持只有一个对象
+     * 节省内存空间
+    */
+    let vid = event.currentTarget.id
+    //关闭上一个播放的视频
+    this.vid !== vid && this.videoContext && this.videoContext.stop();
+    this.vid = vid;
+    //创建控制视频标签的实例对象
+    this.videoContext = wx.createVideoContext(vid);
   },
 
   /**
