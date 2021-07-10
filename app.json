@@ -1,12 +1,12 @@
 {
-  "entryPagePath": "pages/video/video",
+  "entryPagePath": "pages/recommendSong/recommendSong",
   "pages": [
     "pages/login/login",
     "pages/index/index",
     "pages/video/video",
-    "pages/personal/personal"
+    "pages/personal/personal",
+    "pages/recommendSong/recommendSong"
   ],
-
   "window": {
     "navigationBarBackgroundColor": "#d43c33",
     "navigationBarTextStyle": "white",
